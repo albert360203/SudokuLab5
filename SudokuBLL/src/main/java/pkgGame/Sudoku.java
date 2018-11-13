@@ -715,7 +715,12 @@ public class Sudoku extends LatinSquare implements Serializable {
 				break;
 			}
 			else 
-				ans*=cell.lstRemainingValidValues.size();
+			{
+				if(cell.lstRemainingValidValues.size()==0)
+					continue;
+				else
+				    ans*=cell.lstRemainingValidValues.size();
+			}
 		}
 		return (int) ans;
 	}
